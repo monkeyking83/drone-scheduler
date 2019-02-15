@@ -17,7 +17,7 @@ public class DroneApplication implements ApplicationRunner {
 
 	private static final String ORDERS = "input";
 	
-	@Value("${default.output.path:./schedules/drone_schedule.txt}")
+	@Value("${default.output.path:./drone_schedule.txt}")
 	private String outputPath;
 	
 	@Autowired

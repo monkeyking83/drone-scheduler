@@ -89,7 +89,7 @@ public class DroneScheduler {
 	private String printSchedule(OrderDeliverySchedule deliverySchedule) {
 		
 		String orderId = deliverySchedule.getOrderData().getOrderId();
-		String orderTime = deliverySchedule.getDepartureTime().get().format(DateTimeFormatter.ISO_LOCAL_TIME);
+		String orderTime = deliverySchedule.getDepartureTime().get().format(DateTimeFormatter.ofPattern("HH:mm:ss"));
 		
 		return String.format(orderDeliveryFormat, orderId, orderTime);
 	}
