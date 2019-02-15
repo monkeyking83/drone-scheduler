@@ -3,11 +3,14 @@ package com.walmart.drone.order;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 public class OrderDeliverySchedule {
 
 	private OrderData orderData;
 	private Optional<LocalDateTime> departureTime;
-	private LocalDateTime estimatedDeliveryDate;
 	private Integer estimatedTravelTime;
 	private Integer initialTimeToDelivery;
 	private Double distanceFromWharehouse;
@@ -15,7 +18,7 @@ public class OrderDeliverySchedule {
 	public OrderDeliverySchedule() {
 		this.departureTime = Optional.empty();
 	}
-	
+
 	public OrderData getOrderData() {
 		return orderData;
 	}
@@ -32,13 +35,6 @@ public class OrderDeliverySchedule {
 		this.departureTime = departureTime;
 	}
 
-	public LocalDateTime getEstimatedDeliveryDate() {
-		return estimatedDeliveryDate;
-	}
-
-	public void setEstimatedDeliveryDate(LocalDateTime estimatedDeliveryTime) {
-		this.estimatedDeliveryDate = estimatedDeliveryTime;
-	}
 
 	public Integer getEstimatedTravelTime() {
 		return estimatedTravelTime;
@@ -64,8 +60,19 @@ public class OrderDeliverySchedule {
 		this.distanceFromWharehouse = distanceFromWharehouse;
 	}
 
-	
-	
-	
-	
+	@Override
+	public int hashCode() {
+		return HashCodeBuilder.reflectionHashCode(this, false);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		return EqualsBuilder.reflectionEquals(this, obj, false);
+	}
+
+	@Override
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this);
+	}
+
 }

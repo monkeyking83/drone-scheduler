@@ -1,3 +1,18 @@
+To run, execute the following from the project root: 
+./gradlew clean bootRun -Pargs=--input=<path to input file>
+
+To run tests:
+./gradlew clean test jacocoTestReport
+The Junit test report can be found here: $buildDir/reports/jacoco/test/html/com.walmart.drone.order/index.html
+The Jacoco report can be found here: $buildDir/reports/jacoco/test
+
+To run sonarqube plugin:
+./gradlew clean test jacocoTestReport sonarqube
+Assuming there's a local sonarcube server running, the report should be here: http://localhost:9000/dashboard?id=com.walmart%3Adrone
+
+
+
+
 Assumptions:
 * Drone can only carry one package at a time
 * Weight has no impact on speed or battery charge
@@ -10,7 +25,7 @@ Assumptions:
 * Orders that cannot be scheduled for the day automatically incur a 0 NPS, and are left off the output
 * NPS is unique per order (multiple orders going to the same address result in unique NPS's)
 * Coordinates are always represented by whole numbers (integers or longs)
-* There is no order for longitudinal vs latitudinal coordinates (i.e. both N2E2 and E2N2 are valid)
+* Longitudinal vs latitudinal coordinates are ordered with N/S first, then E/W
 
 
 Questions:

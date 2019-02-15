@@ -57,7 +57,7 @@ public class DroneDeliveryScheduleCreator {
 		LocalDateTime droneReturnTime;
 
 		for (OrderDeliverySchedule orderSchedule : route.getDeliverySchedules()) {
-			droneReturnTime = departureTime.plus(orderSchedule.getInitialTimeToDelivery() * 2, ChronoUnit.SECONDS);
+			droneReturnTime = departureTime.plus(orderSchedule.getInitialTimeToDelivery() * 2l, ChronoUnit.SECONDS);
 
 			// We can't schedule anything that would cause the drone to be flying after
 			// hours
