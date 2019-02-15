@@ -9,3 +9,4 @@ scheduler.operation.end=22:00
 
 # Set to true if assuming NPS score starts at scheduler.operation.start time
 scheduler.npsBasedOnStart=false
+

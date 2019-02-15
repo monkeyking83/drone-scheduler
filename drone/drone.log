@@ -1,0 +1,255 @@
+2019-02-15 00:45:31.960  INFO 77377 --- [main] com.walmart.drone.DroneApplication       : Starting DroneApplication on christophe-mac.lan with PID 77377 (/Users/Christophe1/git/repository/drone/build/classes/java/main started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 00:45:31.963  INFO 77377 --- [main] com.walmart.drone.DroneApplication       : No active profile set, falling back to default profiles: default
+2019-02-15 00:45:32.113  WARN 77377 --- [main] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.walmart.drone.DroneApplication]; nested exception is org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'droneStatusService' for bean class [com.walmart.drone.scheduler.DroneStatusService] conflicts with existing, non-compatible bean definition of same name and class [com.walmart.drone.DroneStatusService]
+2019-02-15 00:45:32.123 ERROR 77377 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.walmart.drone.DroneApplication]; nested exception is org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'droneStatusService' for bean class [com.walmart.drone.scheduler.DroneStatusService] conflicts with existing, non-compatible bean definition of same name and class [com.walmart.drone.DroneStatusService]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:181) ~[spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:315) ~[spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232) ~[spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275) ~[spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95) ~[spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:691) ~[spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:528) ~[spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at com.walmart.drone.DroneApplication.main(DroneApplication.java:30) [main/:na]
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'droneStatusService' for bean class [com.walmart.drone.scheduler.DroneStatusService] conflicts with existing, non-compatible bean definition of same name and class [com.walmart.drone.DroneStatusService]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:348) ~[spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:286) ~[spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:132) ~[spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:287) ~[spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:242) ~[spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:199) ~[spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:167) ~[spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	... 12 common frames omitted
+
+2019-02-15 00:47:05.647  INFO 77409 --- [main] com.walmart.drone.DroneApplication       : Starting DroneApplication on christophe-mac.lan with PID 77409 (/Users/Christophe1/git/repository/drone/build/classes/java/main started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 00:47:05.650  INFO 77409 --- [main] com.walmart.drone.DroneApplication       : No active profile set, falling back to default profiles: default
+2019-02-15 00:47:06.305  INFO 77409 --- [main] com.walmart.drone.DroneApplication       : Started DroneApplication in 1.028 seconds (JVM running for 1.394)
+2019-02-15 00:47:20.625  INFO 77424 --- [main] com.walmart.drone.DroneApplication       : Starting DroneApplication on christophe-mac.lan with PID 77424 (/Users/Christophe1/git/repository/drone/build/classes/java/main started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 00:47:20.627  INFO 77424 --- [main] com.walmart.drone.DroneApplication       : No active profile set, falling back to default profiles: default
+2019-02-15 00:47:21.237  INFO 77424 --- [main] com.walmart.drone.DroneApplication       : Started DroneApplication in 0.968 seconds (JVM running for 1.348)
+2019-02-15 00:47:40.361  INFO 77441 --- [main] com.walmart.drone.DroneApplication       : Starting DroneApplication on christophe-mac.lan with PID 77441 (/Users/Christophe1/git/repository/drone/build/classes/java/main started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 00:47:40.363  INFO 77441 --- [main] com.walmart.drone.DroneApplication       : No active profile set, falling back to default profiles: default
+2019-02-15 00:47:41.008  INFO 77441 --- [main] com.walmart.drone.DroneApplication       : Started DroneApplication in 1.032 seconds (JVM running for 1.433)
+2019-02-15 00:52:08.628  INFO 77551 --- [main] com.walmart.drone.DroneApplication       : Starting DroneApplication on christophe-mac.lan with PID 77551 (/Users/Christophe1/git/repository/drone/build/classes/java/main started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 00:52:08.633  INFO 77551 --- [main] com.walmart.drone.DroneApplication       : No active profile set, falling back to default profiles: default
+2019-02-15 00:52:09.247  INFO 77551 --- [main] com.walmart.drone.DroneApplication       : Started DroneApplication in 0.99 seconds (JVM running for 1.378)
+2019-02-15 00:52:20.936  INFO 77568 --- [main] com.walmart.drone.DroneApplication       : Starting DroneApplication on christophe-mac.lan with PID 77568 (/Users/Christophe1/git/repository/drone/build/classes/java/main started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 00:52:20.938  INFO 77568 --- [main] com.walmart.drone.DroneApplication       : No active profile set, falling back to default profiles: default
+2019-02-15 00:52:21.550  INFO 77568 --- [main] com.walmart.drone.DroneApplication       : Started DroneApplication in 0.972 seconds (JVM running for 1.336)
+2019-02-15 00:52:27.724  INFO 77585 --- [main] com.walmart.drone.DroneApplication       : Starting DroneApplication on christophe-mac.lan with PID 77585 (/Users/Christophe1/git/repository/drone/build/classes/java/main started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 00:52:27.727  INFO 77585 --- [main] com.walmart.drone.DroneApplication       : No active profile set, falling back to default profiles: default
+2019-02-15 00:52:28.348  INFO 77585 --- [main] com.walmart.drone.DroneApplication       : Started DroneApplication in 0.976 seconds (JVM running for 1.346)
+2019-02-15 00:52:47.323  INFO 77604 --- [main] com.walmart.drone.DroneApplication       : Starting DroneApplication on christophe-mac.lan with PID 77604 (/Users/Christophe1/git/repository/drone/build/classes/java/main started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 00:52:47.325  INFO 77604 --- [main] com.walmart.drone.DroneApplication       : No active profile set, falling back to default profiles: default
+2019-02-15 00:52:47.925  INFO 77604 --- [main] com.walmart.drone.DroneApplication       : Started DroneApplication in 0.967 seconds (JVM running for 1.347)
+2019-02-15 00:52:54.204  INFO 77619 --- [main] com.walmart.drone.DroneApplication       : Starting DroneApplication on christophe-mac.lan with PID 77619 (/Users/Christophe1/git/repository/drone/build/classes/java/main started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 00:52:54.207  INFO 77619 --- [main] com.walmart.drone.DroneApplication       : No active profile set, falling back to default profiles: default
+2019-02-15 00:52:55.053  INFO 77619 --- [main] com.walmart.drone.DroneApplication       : Started DroneApplication in 1.255 seconds (JVM running for 1.652)
+2019-02-15 00:53:04.316  INFO 77638 --- [main] com.walmart.drone.DroneApplication       : Starting DroneApplication on christophe-mac.lan with PID 77638 (/Users/Christophe1/git/repository/drone/build/classes/java/main started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 00:53:04.319  INFO 77638 --- [main] com.walmart.drone.DroneApplication       : No active profile set, falling back to default profiles: default
+2019-02-15 00:53:04.929  INFO 77638 --- [main] com.walmart.drone.DroneApplication       : Started DroneApplication in 0.984 seconds (JVM running for 1.351)
+2019-02-15 00:55:06.788  INFO 77685 --- [main] com.walmart.drone.DroneApplication       : Starting DroneApplication on christophe-mac.lan with PID 77685 (/Users/Christophe1/git/repository/drone/build/classes/java/main started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 00:55:06.791  INFO 77685 --- [main] com.walmart.drone.DroneApplication       : No active profile set, falling back to default profiles: default
+2019-02-15 00:55:07.387  INFO 77685 --- [main] com.walmart.drone.DroneApplication       : Started DroneApplication in 0.982 seconds (JVM running for 1.386)
+2019-02-15 00:56:07.686  INFO 77713 --- [main] com.walmart.drone.DroneApplication       : Starting DroneApplication on christophe-mac.lan with PID 77713 (/Users/Christophe1/git/repository/drone/build/classes/java/main started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 00:56:07.688  INFO 77713 --- [main] com.walmart.drone.DroneApplication       : No active profile set, falling back to default profiles: default
+2019-02-15 00:56:08.363  INFO 77713 --- [main] com.walmart.drone.DroneApplication       : Started DroneApplication in 1.06 seconds (JVM running for 1.463)
+2019-02-15 00:56:08.377  INFO 77713 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-02-15 00:56:08.384 ERROR 77713 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:807) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:794) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at com.walmart.drone.DroneApplication.main(DroneApplication.java:30) [main/:na]
+Caused by: java.lang.NullPointerException: null
+	at com.walmart.drone.scheduler.DroneDeliveryScheduleCreator.generateDeliverySchedule(DroneDeliveryScheduleCreator.java:61) ~[main/:na]
+	at com.walmart.drone.scheduler.DroneScheduler.generateDeliverySchedule(DroneScheduler.java:52) ~[main/:na]
+	at com.walmart.drone.DroneApplication.run(DroneApplication.java:39) [main/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:804) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	... 5 common frames omitted
+
+2019-02-15 00:57:13.387  INFO 77783 --- [main] com.walmart.drone.DroneApplication       : Starting DroneApplication on christophe-mac.lan with PID 77783 (/Users/Christophe1/git/repository/drone/build/classes/java/main started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 00:57:13.390  INFO 77783 --- [main] com.walmart.drone.DroneApplication       : No active profile set, falling back to default profiles: default
+2019-02-15 00:57:14.042  INFO 77783 --- [main] com.walmart.drone.DroneApplication       : Started DroneApplication in 1.077 seconds (JVM running for 1.544)
+2019-02-15 00:57:14.056  INFO 77783 --- [main] c.w.d.s.DroneDeliveryScheduleCreator     : Unable to schedule order WM003 for delivery as it would cause the drone to fly beyond the allowed hours.
+2019-02-15 00:57:14.066 ERROR 77783 --- [main] c.w.drone.scheduler.DroneScheduler       : Error generating output
+
+java.nio.file.NoSuchFileException: ./drone_schedule.txt
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92) ~[na:na]
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111) ~[na:na]
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116) ~[na:na]
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:215) ~[na:na]
+	at java.base/java.nio.file.spi.FileSystemProvider.newOutputStream(FileSystemProvider.java:434) ~[na:na]
+	at java.base/java.nio.file.Files.newOutputStream(Files.java:218) ~[na:na]
+	at java.base/java.nio.file.Files.write(Files.java:3420) ~[na:na]
+	at java.base/java.nio.file.Files.write(Files.java:3471) ~[na:na]
+	at com.walmart.drone.scheduler.DroneScheduler.printRouteToFile(DroneScheduler.java:86) ~[main/:na]
+	at com.walmart.drone.scheduler.DroneScheduler.generateDeliverySchedule(DroneScheduler.java:55) ~[main/:na]
+	at com.walmart.drone.DroneApplication.run(DroneApplication.java:39) [main/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:804) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:794) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at com.walmart.drone.DroneApplication.main(DroneApplication.java:30) [main/:na]
+
+2019-02-15 00:59:59.101  INFO 77837 --- [main] com.walmart.drone.DroneApplication       : Starting DroneApplication on christophe-mac.lan with PID 77837 (/Users/Christophe1/git/repository/drone/build/classes/java/main started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 00:59:59.103  INFO 77837 --- [main] com.walmart.drone.DroneApplication       : No active profile set, falling back to default profiles: default
+2019-02-15 00:59:59.771  INFO 77837 --- [main] com.walmart.drone.DroneApplication       : Started DroneApplication in 1.068 seconds (JVM running for 1.502)
+2019-02-15 00:59:59.783  INFO 77837 --- [main] c.w.d.s.DroneDeliveryScheduleCreator     : Unable to schedule order WM001 for delivery as it would cause the drone to fly beyond the allowed hours.
+2019-02-15 00:59:59.785  INFO 77837 --- [main] c.w.d.s.DroneDeliveryScheduleCreator     : Unable to schedule order WM003 for delivery as it would cause the drone to fly beyond the allowed hours.
+2019-02-15 01:12:45.877  INFO 78024 --- [main] c.w.d.s.DroneDeliverySchedulerTest       : Starting DroneDeliverySchedulerTest on christophe-mac.lan with PID 78024 (started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 01:12:45.879  INFO 78024 --- [main] c.w.d.s.DroneDeliverySchedulerTest       : No active profile set, falling back to default profiles: default
+2019-02-15 01:12:46.444  INFO 78024 --- [main] c.w.d.s.DroneDeliverySchedulerTest       : Started DroneDeliverySchedulerTest in 0.874 seconds (JVM running for 1.629)
+2019-02-15 01:12:59.788  INFO 78031 --- [main] c.w.d.s.DroneDeliverySchedulerTest       : Starting DroneDeliverySchedulerTest on christophe-mac.lan with PID 78031 (started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 01:12:59.791  INFO 78031 --- [main] c.w.d.s.DroneDeliverySchedulerTest       : No active profile set, falling back to default profiles: default
+2019-02-15 01:13:00.476  INFO 78031 --- [main] c.w.d.s.DroneDeliverySchedulerTest       : Started DroneDeliverySchedulerTest in 1.049 seconds (JVM running for 2.304)
+2019-02-15 01:14:53.196  INFO 78054 --- [main] c.w.d.s.DroneDeliverySchedulerTest       : Starting DroneDeliverySchedulerTest on christophe-mac.lan with PID 78054 (started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 01:14:53.197  INFO 78054 --- [main] c.w.d.s.DroneDeliverySchedulerTest       : No active profile set, falling back to default profiles: default
+2019-02-15 01:14:53.873  INFO 78054 --- [main] c.w.d.s.DroneDeliverySchedulerTest       : Started DroneDeliverySchedulerTest in 1.028 seconds (JVM running for 2.356)
+2019-02-15 01:14:56.934  INFO 78054 --- [main] c.w.d.s.DroneDeliveryScheduleCreator     : Unable to schedule order WM002 for delivery as it would cause the drone to fly beyond the allowed hours.
+2019-02-15 01:14:56.936  INFO 78054 --- [main] c.w.d.s.DroneDeliveryScheduleCreator     : Unable to schedule order WM001 for delivery as it would cause the drone to fly beyond the allowed hours.
+2019-02-15 01:14:56.937  INFO 78054 --- [main] c.w.d.s.DroneDeliveryScheduleCreator     : Unable to schedule order WM003 for delivery as it would cause the drone to fly beyond the allowed hours.
+2019-02-15 01:18:31.260  INFO 78104 --- [main] c.w.d.s.DroneDeliverySchedulerTest       : Starting DroneDeliverySchedulerTest on christophe-mac.lan with PID 78104 (started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 01:18:31.261  INFO 78104 --- [main] c.w.d.s.DroneDeliverySchedulerTest       : No active profile set, falling back to default profiles: default
+2019-02-15 01:18:31.919  INFO 78104 --- [main] c.w.d.s.DroneDeliverySchedulerTest       : Started DroneDeliverySchedulerTest in 1.014 seconds (JVM running for 2.227)
+2019-02-15 01:23:21.827  INFO 78179 --- [main] com.walmart.drone.DroneApplication       : Starting DroneApplication on christophe-mac.lan with PID 78179 (/Users/Christophe1/git/repository/drone/build/classes/java/main started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 01:23:21.829  INFO 78179 --- [main] com.walmart.drone.DroneApplication       : No active profile set, falling back to default profiles: default
+2019-02-15 01:23:22.458  INFO 78179 --- [main] com.walmart.drone.DroneApplication       : Started DroneApplication in 1.006 seconds (JVM running for 1.393)
+2019-02-15 01:23:44.278  INFO 78185 --- [main] c.w.d.s.DroneDeliverySchedulerTest       : Starting DroneDeliverySchedulerTest on christophe-mac.lan with PID 78185 (started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 01:23:44.280  INFO 78185 --- [main] c.w.d.s.DroneDeliverySchedulerTest       : No active profile set, falling back to default profiles: default
+2019-02-15 01:23:44.959  INFO 78185 --- [main] c.w.d.s.DroneDeliverySchedulerTest       : Started DroneDeliverySchedulerTest in 1.051 seconds (JVM running for 2.247)
+2019-02-15 01:28:01.949  INFO 78257 --- [main] com.walmart.drone.DroneApplication       : Starting DroneApplication on christophe-mac.lan with PID 78257 (/Users/Christophe1/git/repository/drone/build/classes/java/main started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 01:28:01.952  INFO 78257 --- [main] com.walmart.drone.DroneApplication       : No active profile set, falling back to default profiles: default
+2019-02-15 01:28:02.576  INFO 78257 --- [main] com.walmart.drone.DroneApplication       : Started DroneApplication in 0.985 seconds (JVM running for 1.355)
+2019-02-15 01:28:02.584 ERROR 78257 --- [main] c.w.drone.scheduler.DroneScheduler       : Unable to backup an existing output path
+
+java.nio.file.FileAlreadyExistsException: ./drone_schedule.txt-20190215005959
+	at java.base/sun.nio.fs.UnixCopyFile.copy(UnixCopyFile.java:556) ~[na:na]
+	at java.base/sun.nio.fs.UnixFileSystemProvider.copy(UnixFileSystemProvider.java:254) ~[na:na]
+	at java.base/java.nio.file.Files.copy(Files.java:1287) ~[na:na]
+	at com.walmart.drone.scheduler.DroneScheduler.backupExistingOutput(DroneScheduler.java:70) ~[main/:na]
+	at com.walmart.drone.scheduler.DroneScheduler.generateDeliverySchedule(DroneScheduler.java:44) ~[main/:na]
+	at com.walmart.drone.DroneApplication.run(DroneApplication.java:39) [main/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:804) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:794) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at com.walmart.drone.DroneApplication.main(DroneApplication.java:30) [main/:na]
+
+2019-02-15 01:28:12.102  INFO 78274 --- [main] com.walmart.drone.DroneApplication       : Starting DroneApplication on christophe-mac.lan with PID 78274 (/Users/Christophe1/git/repository/drone/build/classes/java/main started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 01:28:12.106  INFO 78274 --- [main] com.walmart.drone.DroneApplication       : No active profile set, falling back to default profiles: default
+2019-02-15 01:28:12.919  INFO 78274 --- [main] com.walmart.drone.DroneApplication       : Started DroneApplication in 1.249 seconds (JVM running for 1.704)
+2019-02-15 01:28:12.928 ERROR 78274 --- [main] c.w.drone.scheduler.DroneScheduler       : Unable to backup an existing output path
+
+java.nio.file.FileAlreadyExistsException: ./drone_schedule.txt-20190215005959
+	at java.base/sun.nio.fs.UnixCopyFile.copy(UnixCopyFile.java:556) ~[na:na]
+	at java.base/sun.nio.fs.UnixFileSystemProvider.copy(UnixFileSystemProvider.java:254) ~[na:na]
+	at java.base/java.nio.file.Files.copy(Files.java:1287) ~[na:na]
+	at com.walmart.drone.scheduler.DroneScheduler.backupExistingOutput(DroneScheduler.java:70) ~[main/:na]
+	at com.walmart.drone.scheduler.DroneScheduler.generateDeliverySchedule(DroneScheduler.java:44) ~[main/:na]
+	at com.walmart.drone.DroneApplication.run(DroneApplication.java:39) [main/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:804) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:794) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at com.walmart.drone.DroneApplication.main(DroneApplication.java:30) [main/:na]
+
+2019-02-15 01:28:26.178  INFO 78292 --- [main] com.walmart.drone.DroneApplication       : Starting DroneApplication on christophe-mac.lan with PID 78292 (/Users/Christophe1/git/repository/drone/build/classes/java/main started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 01:28:26.181  INFO 78292 --- [main] com.walmart.drone.DroneApplication       : No active profile set, falling back to default profiles: default
+2019-02-15 01:28:26.776  INFO 78292 --- [main] com.walmart.drone.DroneApplication       : Started DroneApplication in 0.966 seconds (JVM running for 1.34)
+2019-02-15 01:30:19.388  INFO 78317 --- [main] c.w.d.s.DroneDeliverySchedulerTest       : Starting DroneDeliverySchedulerTest on christophe-mac.lan with PID 78317 (started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 01:30:19.390  INFO 78317 --- [main] c.w.d.s.DroneDeliverySchedulerTest       : No active profile set, falling back to default profiles: default
+2019-02-15 01:30:20.027  INFO 78317 --- [main] c.w.d.s.DroneDeliverySchedulerTest       : Started DroneDeliverySchedulerTest in 1.009 seconds (JVM running for 2.275)
+2019-02-15 01:31:25.356  INFO 78332 --- [main] c.w.d.s.DroneDeliverySchedulerTest       : Starting DroneDeliverySchedulerTest on christophe-mac.lan with PID 78332 (started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 01:31:25.357  INFO 78332 --- [main] c.w.d.s.DroneDeliverySchedulerTest       : No active profile set, falling back to default profiles: default
+2019-02-15 01:31:25.985  INFO 78332 --- [main] c.w.d.s.DroneDeliverySchedulerTest       : Started DroneDeliverySchedulerTest in 0.98 seconds (JVM running for 2.169)
+2019-02-15 01:32:50.651  INFO 78349 --- [main] c.w.d.s.DroneDeliverySchedulerTest       : Starting DroneDeliverySchedulerTest on christophe-mac.lan with PID 78349 (started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 01:32:50.652  INFO 78349 --- [main] c.w.d.s.DroneDeliverySchedulerTest       : No active profile set, falling back to default profiles: default
+2019-02-15 01:32:51.297  INFO 78349 --- [main] c.w.d.s.DroneDeliverySchedulerTest       : Started DroneDeliverySchedulerTest in 1.021 seconds (JVM running for 2.24)
+2019-02-15 01:37:38.671  INFO 78411 --- [main] c.w.d.s.DroneDeliverySchedulerTest       : Starting DroneDeliverySchedulerTest on christophe-mac.lan with PID 78411 (started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 01:37:38.672  INFO 78411 --- [main] c.w.d.s.DroneDeliverySchedulerTest       : No active profile set, falling back to default profiles: default
+2019-02-15 01:37:39.336  INFO 78411 --- [main] c.w.d.s.DroneDeliverySchedulerTest       : Started DroneDeliverySchedulerTest in 1.011 seconds (JVM running for 2.229)
+2019-02-15 01:39:59.712  INFO 78456 --- [main] com.walmart.drone.DroneApplication       : Starting DroneApplication on christophe-mac.lan with PID 78456 (/Users/Christophe1/git/repository/drone/build/classes/java/main started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 01:39:59.715  INFO 78456 --- [main] com.walmart.drone.DroneApplication       : No active profile set, falling back to default profiles: default
+2019-02-15 01:40:00.319  INFO 78456 --- [main] com.walmart.drone.DroneApplication       : Started DroneApplication in 0.965 seconds (JVM running for 1.334)
+2019-02-15 01:40:00.328 ERROR 78456 --- [main] c.w.drone.scheduler.DroneScheduler       : Unable to backup an existing output path
+
+java.nio.file.FileAlreadyExistsException: ./drone_schedule.txt-20190215005959
+	at java.base/sun.nio.fs.UnixCopyFile.copy(UnixCopyFile.java:556) ~[na:na]
+	at java.base/sun.nio.fs.UnixFileSystemProvider.copy(UnixFileSystemProvider.java:254) ~[na:na]
+	at java.base/java.nio.file.Files.copy(Files.java:1287) ~[na:na]
+	at com.walmart.drone.scheduler.DroneScheduler.backupExistingOutput(DroneScheduler.java:70) ~[main/:na]
+	at com.walmart.drone.scheduler.DroneScheduler.generateDeliverySchedule(DroneScheduler.java:44) ~[main/:na]
+	at com.walmart.drone.DroneApplication.run(DroneApplication.java:39) [main/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:804) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:794) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at com.walmart.drone.DroneApplication.main(DroneApplication.java:30) [main/:na]
+
+2019-02-15 01:41:10.232  INFO 78487 --- [main] com.walmart.drone.DroneApplication       : Starting DroneApplication on christophe-mac.lan with PID 78487 (/Users/Christophe1/git/repository/drone/build/classes/java/main started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 01:41:10.234  INFO 78487 --- [main] com.walmart.drone.DroneApplication       : No active profile set, falling back to default profiles: default
+2019-02-15 01:41:10.844  INFO 78487 --- [main] com.walmart.drone.DroneApplication       : Started DroneApplication in 0.982 seconds (JVM running for 1.355)
+2019-02-15 01:45:34.351  INFO 78581 --- [Test worker] c.w.d.s.DroneDeliverySchedulerTest       : Starting DroneDeliverySchedulerTest on christophe-mac.lan with PID 78581 (started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 01:45:34.353  INFO 78581 --- [Test worker] c.w.d.s.DroneDeliverySchedulerTest       : No active profile set, falling back to default profiles: default
+2019-02-15 01:45:35.095  INFO 78581 --- [Test worker] c.w.d.s.DroneDeliverySchedulerTest       : Started DroneDeliverySchedulerTest in 1.134 seconds (JVM running for 2.72)
+2019-02-15 01:45:35.567  INFO 78581 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.walmart.drone.DroneApplicationTests], using SpringBootContextLoader
+2019-02-15 01:45:35.568  INFO 78581 --- [Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.walmart.drone.DroneApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-02-15 01:45:35.569  INFO 78581 --- [Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.walmart.drone.DroneApplicationTests]: DroneApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-02-15 01:45:35.575  INFO 78581 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.walmart.drone.DroneApplication for test class com.walmart.drone.DroneApplicationTests
+2019-02-15 01:45:35.576  INFO 78581 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-02-15 01:45:35.578  INFO 78581 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@67a74125, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@58ceffed, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@3730fa00, org.springframework.test.context.support.DirtiesContextTestExecutionListener@37f13d61, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6a82fcd3, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@451c47f9, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@75cc55a0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4b68744d, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@36f16d97]
+2019-02-15 01:45:45.573  INFO 78598 --- [Test worker] c.w.d.s.DroneDeliverySchedulerTest       : Starting DroneDeliverySchedulerTest on christophe-mac.lan with PID 78598 (started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 01:45:45.575  INFO 78598 --- [Test worker] c.w.d.s.DroneDeliverySchedulerTest       : No active profile set, falling back to default profiles: default
+2019-02-15 01:45:46.324  INFO 78598 --- [Test worker] c.w.d.s.DroneDeliverySchedulerTest       : Started DroneDeliverySchedulerTest in 1.13 seconds (JVM running for 2.78)
+2019-02-15 01:45:46.805  INFO 78598 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.walmart.drone.DroneApplicationTests], using SpringBootContextLoader
+2019-02-15 01:45:46.806  INFO 78598 --- [Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.walmart.drone.DroneApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-02-15 01:45:46.807  INFO 78598 --- [Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.walmart.drone.DroneApplicationTests]: DroneApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-02-15 01:45:46.814  INFO 78598 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.walmart.drone.DroneApplication for test class com.walmart.drone.DroneApplicationTests
+2019-02-15 01:45:46.816  INFO 78598 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-02-15 01:45:46.817  INFO 78598 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1ce6267d, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5d66bd06, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@21866cb1, org.springframework.test.context.support.DirtiesContextTestExecutionListener@55111635, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@78691724, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@100f1ba2, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2fe0ef6, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@5f030022, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6fe3fcd1]
+2019-02-15 02:02:20.010  INFO 78940 --- [main] com.walmart.drone.DroneApplication       : Starting DroneApplication on christophe-mac.lan with PID 78940 (/Users/Christophe1/git/repository/drone/build/classes/java/main started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 02:02:20.013  INFO 78940 --- [main] com.walmart.drone.DroneApplication       : No active profile set, falling back to default profiles: default
+2019-02-15 02:02:20.628  INFO 78940 --- [main] com.walmart.drone.DroneApplication       : Started DroneApplication in 1.006 seconds (JVM running for 1.408)
+2019-02-15 02:07:45.757  INFO 79267 --- [Test worker] c.w.d.s.DroneDeliverySchedulerTest       : Starting DroneDeliverySchedulerTest on christophe-mac.lan with PID 79267 (started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 02:07:45.760  INFO 79267 --- [Test worker] c.w.d.s.DroneDeliverySchedulerTest       : No active profile set, falling back to default profiles: default
+2019-02-15 02:07:46.545  INFO 79267 --- [Test worker] c.w.d.s.DroneDeliverySchedulerTest       : Started DroneDeliverySchedulerTest in 1.186 seconds (JVM running for 2.912)
+2019-02-15 02:07:47.050  INFO 79267 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.walmart.drone.DroneApplicationTests], using SpringBootContextLoader
+2019-02-15 02:07:47.051  INFO 79267 --- [Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.walmart.drone.DroneApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-02-15 02:07:47.051  INFO 79267 --- [Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.walmart.drone.DroneApplicationTests]: DroneApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-02-15 02:07:47.057  INFO 79267 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.walmart.drone.DroneApplication for test class com.walmart.drone.DroneApplicationTests
+2019-02-15 02:07:47.059  INFO 79267 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-02-15 02:07:47.060  INFO 79267 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@209bdf4b, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6108ad2, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6e5a47fd, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4845f50f, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@365a0acb, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@349e40c8, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@8c78c09, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@6fcded93, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@9a7aef3]
+2019-02-15 02:09:06.088  INFO 79331 --- [Test worker] c.w.d.s.DroneDeliverySchedulerTest       : Starting DroneDeliverySchedulerTest on christophe-mac.lan with PID 79331 (started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 02:09:06.090  INFO 79331 --- [Test worker] c.w.d.s.DroneDeliverySchedulerTest       : No active profile set, falling back to default profiles: default
+2019-02-15 02:09:06.890  INFO 79331 --- [Test worker] c.w.d.s.DroneDeliverySchedulerTest       : Started DroneDeliverySchedulerTest in 1.237 seconds (JVM running for 3.047)
+2019-02-15 02:09:07.485  INFO 79331 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.walmart.drone.DroneApplicationTests], using SpringBootContextLoader
+2019-02-15 02:09:07.488  INFO 79331 --- [Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.walmart.drone.DroneApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-02-15 02:09:07.489  INFO 79331 --- [Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.walmart.drone.DroneApplicationTests]: DroneApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-02-15 02:09:07.497  INFO 79331 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.walmart.drone.DroneApplication for test class com.walmart.drone.DroneApplicationTests
+2019-02-15 02:09:07.498  INFO 79331 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-02-15 02:09:07.499  INFO 79331 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@720990a8, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@74bc1e93, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@1ac2cce9, org.springframework.test.context.support.DirtiesContextTestExecutionListener@64bed27b, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5a0c9294, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4e5047c0, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@42f97f67, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@50c64049, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6ee0f0f7]
+2019-02-15 02:14:56.958  INFO 79448 --- [Test worker] c.w.d.s.DroneDeliverySchedulerTest       : Starting DroneDeliverySchedulerTest on christophe-mac.lan with PID 79448 (started by Christophe1 in /Users/Christophe1/git/repository/drone)
+2019-02-15 02:14:56.961  INFO 79448 --- [Test worker] c.w.d.s.DroneDeliverySchedulerTest       : No active profile set, falling back to default profiles: default
+2019-02-15 02:14:57.719  INFO 79448 --- [Test worker] c.w.d.s.DroneDeliverySchedulerTest       : Started DroneDeliverySchedulerTest in 1.159 seconds (JVM running for 2.805)
+2019-02-15 02:14:58.216  INFO 79448 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.walmart.drone.DroneApplicationTests], using SpringBootContextLoader
+2019-02-15 02:14:58.218  INFO 79448 --- [Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.walmart.drone.DroneApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-02-15 02:14:58.218  INFO 79448 --- [Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.walmart.drone.DroneApplicationTests]: DroneApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-02-15 02:14:58.224  INFO 79448 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.walmart.drone.DroneApplication for test class com.walmart.drone.DroneApplicationTests
+2019-02-15 02:14:58.227  INFO 79448 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-02-15 02:14:58.228  INFO 79448 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@69ca927f, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@42b3caf0, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@178f8938, org.springframework.test.context.support.DirtiesContextTestExecutionListener@43482248, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@7eac1934, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@2214a85b, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@49393368, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4b610265, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@559ad784]

@@ -7,13 +7,20 @@ buildscript {
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+  
 	}
 }
+
+plugins {
+  id "org.sonarqube" version "2.7"
+}
+
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'jacoco'
 
 group = 'com.walmart'
 version = '0.0.1-SNAPSHOT'
@@ -23,7 +30,26 @@ repositories {
 	mavenCentral()
 }
 
+
+
+sonarqube {
+    properties {
+        property 'sonar.projectName', 'Example of SonarQube Scanner for Gradle Usage'
+        property "sonar.exclusions", "**/*Generated.java"
+    }
+}
+
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
+    compile 'javax.validation:validation-api:1.1.0.Final'
+    compile 'org.apache.commons:commons-lang3:3.8.1'
+    implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-logging'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+
+bootRun {
+    if (project.hasProperty('args')) {
+        args project.args.split(',')
+    }
 }
