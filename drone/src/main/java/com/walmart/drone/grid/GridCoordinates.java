@@ -1,4 +1,8 @@
-package com.walmart.drone;
+package com.walmart.drone.grid;
+
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
  * This represents a point on the grid. Positive values on the X axis represent
@@ -29,16 +33,23 @@ public class GridCoordinates {
 		return x;
 	}
 
-	public void setX(Double x) {
-		this.x = x;
-	}
-
 	public Double getY() {
 		return y;
 	}
-
-	public void setY(Double y) {
-		this.y = y;
+	
+	@Override
+	public int hashCode() {
+		return HashCodeBuilder.reflectionHashCode(this, false);
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		return EqualsBuilder.reflectionEquals(this, obj, false);
+	}
+
+	@Override
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this);
+	}
+	
 }

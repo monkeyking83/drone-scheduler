@@ -1,7 +1,7 @@
 package com.walmart.drone;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import java.io.PrintStream;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;
@@ -15,16 +15,15 @@ import com.walmart.drone.scheduler.DroneScheduler;
 @SpringBootApplication
 public class DroneApplication implements ApplicationRunner {
 
-	private Logger logger = LoggerFactory.getLogger(DroneApplication.class);
-	
 	private static final String ORDERS = "input";
-	private static final String SCHEDULE_FILE_PATH = "output";
 	
-	@Value("${default.output.path:./drone_schedule.txt}")
+	@Value("${default.output.path:./schedules/drone_schedule.txt}")
 	private String outputPath;
 	
 	@Autowired
 	private DroneScheduler droneScheduler;
+	
+	private PrintStream out = System.out;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(DroneApplication.class, args);
@@ -38,10 +37,10 @@ public class DroneApplication implements ApplicationRunner {
 			
 			String results = droneScheduler.generateDeliverySchedule(orderFilePath, outputPath);
 			
-			System.out.println(results);
+			out.println(results);
 			
 		} else {
-			System.out.println("Missing input file");
+			out.println("Missing input file");
 		}
 		
 	}

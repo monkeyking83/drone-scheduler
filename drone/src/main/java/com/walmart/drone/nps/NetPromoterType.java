@@ -29,8 +29,6 @@ public enum NetPromoterType {
 		return max;
 	}
 
-
-
 	public static NetPromoterType getType(int score) {
 		// adjust score to valid range:
 		int adjustedScore = score > MAX_SCORE ? MAX_SCORE : score;

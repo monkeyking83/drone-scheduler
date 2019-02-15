@@ -8,19 +8,19 @@ import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import com.walmart.drone.DeliveryRoute;
-import com.walmart.drone.GridCoordinates;
-import com.walmart.drone.OrderData;
-import com.walmart.drone.OrderDeliverySchedule;
+import com.walmart.drone.grid.GridCoordinates;
+import com.walmart.drone.order.OrderData;
+import com.walmart.drone.order.OrderDeliverySchedule;
 
 @Component
 public class DroneDeliveryScheduleCreator {
 
 	private Logger logger = LoggerFactory.getLogger(DroneDeliveryScheduleCreator.class);
-	
+
 	@Value("#{ T(java.time.LocalTime).parse('${scheduler.operation.start}')}")
 	private LocalTime operationStartTime;
 
@@ -29,6 +29,9 @@ public class DroneDeliveryScheduleCreator {
 
 	@Value("${scheduler.npsBasedOnStart:false}")
 	private boolean npsBasedOnStart;
+
+	@Autowired
+	TimeProvider timeProvider;
 
 	public DeliveryRoute generateDeliverySchedule(List<OrderData> orderDataList) {
 		DeliveryRoute route = new DeliveryRoute();
@@ -47,16 +50,17 @@ public class DroneDeliveryScheduleCreator {
 		route.getDeliverySchedules().sort((OrderDeliverySchedule o1, OrderDeliverySchedule o2) -> o1
 				.getInitialTimeToDelivery().compareTo(o2.getInitialTimeToDelivery()));
 
-		LocalDateTime departureTime = operationStartTime.until(getCurrentTime(), ChronoUnit.MINUTES) > 0
-				? getCurrentTime()
+		LocalDateTime departureTime = operationStartTime.until(timeProvider.getCurrentTime(), ChronoUnit.MINUTES) > 0
+				? timeProvider.getCurrentTime()
 				: LocalDateTime.now().with(operationStartTime);
-				
-		LocalDateTime droneReturnTime = LocalDateTime.from(departureTime);
-		
+
+		LocalDateTime droneReturnTime;
+
 		for (OrderDeliverySchedule orderSchedule : route.getDeliverySchedules()) {
 			droneReturnTime = departureTime.plus(orderSchedule.getInitialTimeToDelivery() * 2, ChronoUnit.SECONDS);
-			
-			// We can't schedule anything that would cause the drone to be flying after hours
+
+			// We can't schedule anything that would cause the drone to be flying after
+			// hours
 			if (droneReturnTime.toLocalTime().isBefore(operationEndTime)) {
 				orderSchedule.setDepartureTime(Optional.of(departureTime));
 				route.getNetPromoterScore().addScore(calculateCurrentOrderScore(orderSchedule));
@@ -80,24 +84,26 @@ public class DroneDeliveryScheduleCreator {
 	 */
 	private Integer calculateCurrentOrderScore(OrderDeliverySchedule orderSchedule) {
 
-		Integer travelTime = orderSchedule.getEstimatedTravelTime() + Long.valueOf(orderSchedule.getOrderData()
-				.getOrderDate().until(orderSchedule.getDepartureTime().get(), ChronoUnit.SECONDS)).intValue();
-
+		Integer travelTime = orderSchedule.getEstimatedTravelTime();
+		
+		if (orderSchedule.getDepartureTime().isPresent()) {
+			travelTime += (int)orderSchedule.getOrderData()
+				.getOrderDate().until(orderSchedule.getDepartureTime().get(), ChronoUnit.SECONDS);
+		}
+		
 		if (npsBasedOnStart) {
-			Long startToOrderSeconds = operationStartTime.until(orderSchedule.getOrderData().getOrderDate(), ChronoUnit.SECONDS);
+			long startToOrderSeconds = operationStartTime.until(orderSchedule.getOrderData().getOrderDate(),
+					ChronoUnit.SECONDS);
 			if (startToOrderSeconds > 0) {
-				travelTime = travelTime.intValue() - Long.valueOf(startToOrderSeconds).intValue();
+				travelTime = travelTime.intValue() - (int)startToOrderSeconds;
 			}
 		}
 
 		Integer travelHours = travelTime / 3600;
-		
-		Integer nps = 10 - Math.min(10, travelHours);
 
-		return nps;
+		return 10 - Math.min(10, travelHours);
 	}
 
-	
 	/**
 	 * Calculates the number of minutes that would have elapsed between the time the
 	 * order was placed and if the order were to leave for delivery right now
@@ -117,8 +123,9 @@ public class DroneDeliveryScheduleCreator {
 	public Integer getElapsedSecondsSinceOrder(OrderData orderData) {
 
 		LocalDateTime orderTime = orderData.getOrderDate();
-		return orderTime.isBefore(getCurrentTime()) ? Long.valueOf(orderData.getOrderDate().until(getCurrentTime(), ChronoUnit.SECONDS))
-				.intValue() : 0;
+		return orderTime.isBefore(timeProvider.getCurrentTime())
+				? (int) orderData.getOrderDate().until(timeProvider.getCurrentTime(), ChronoUnit.SECONDS)
+				: 0;
 	}
 
 	/**
@@ -132,20 +139,12 @@ public class DroneDeliveryScheduleCreator {
 		int minutes = distance.intValue();
 		Double seconds = (distance % minutes) * 60;
 
-		int travelTime = (minutes * 60) + Long.valueOf(Math.round(seconds)).intValue();
-
-		return travelTime;
+		return (minutes * 60) + (int)(Math.round(seconds));
 	}
 
 	private Double getDistanceFromWharehouse(OrderData orderData) {
 		GridCoordinates coordinates = orderData.getCoordinates();
-		Double distance = Math.sqrt(Math.pow(coordinates.getX(), 2) + Math.pow(coordinates.getY(), 2));
-		return distance;
-	}
-
-	// perhaps move this to a more widely available class
-	public LocalDateTime getCurrentTime() {
-		return LocalDateTime.now();
+		return Math.sqrt(Math.pow(coordinates.getX(), 2) + Math.pow(coordinates.getY(), 2));
 	}
 
 }

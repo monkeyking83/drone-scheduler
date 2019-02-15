@@ -1,10 +1,11 @@
-package com.walmart.drone;
+package com.walmart.drone.grid;
+
+import static org.apache.commons.lang3.StringUtils.EMPTY;
 
 import java.util.Arrays;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-import static org.apache.commons.lang3.StringUtils.EMPTY;
 
 import org.apache.commons.lang3.StringUtils;
 

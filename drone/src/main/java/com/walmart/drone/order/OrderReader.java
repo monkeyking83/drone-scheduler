@@ -1,4 +1,4 @@
-package com.walmart.drone;
+package com.walmart.drone.order;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,35 +17,46 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import com.walmart.drone.grid.GridCoordinates;
+import com.walmart.drone.grid.GridDirection;
 import com.walmart.drone.scheduler.DroneSchedulerException;
 
+/**
+ * Parses contents of an input file to produce a list of OrderData
+ * 
+ * @author Christophe Santini
+ *
+ */
 @Component
 public class OrderReader {
 
 	Logger logger = LoggerFactory.getLogger(OrderReader.class);
-	
-	private static int ORDER_ID_INDEX = 0;
-	private static int  DESTINATION_COORD_INDEX = 1;
-	private static int ORDER_TIME_INDEX = 2;
+
+	private static int orderIdIndex = 0;
+	private static int destinationCoordIndex = 1;
+	private static int orderTimeIndex = 2;
+	private static String coordinatePatternString = "([N|S])(\\d+)([E|W])(\\d+)";
+	private static String orderIdPatternString = "WM\\d{3,4}";
+
 	/**
 	 * This pattern assumes that North/South directions must come first
 	 */
-	private static Pattern coordinatePattern = Pattern.compile("([N|S])(\\d+)([E|W])(\\d+)");
-	
-	
-	
+	private static Pattern coordinatePattern = Pattern.compile(coordinatePatternString);
+
+	private static Pattern orderIdPattern = Pattern.compile(orderIdPatternString);
+
 	public List<OrderData> readOrderData(String orderListPath) {
 		File orderListFile = new File(orderListPath);
 		return readOrderData(orderListFile);
 	}
-	
-	public List<OrderData> readOrderData(File  orderListFile) {
+
+	public List<OrderData> readOrderData(File orderListFile) {
 		List<OrderData> orderDataList = new ArrayList<>();
 		try {
 			List<String> orderLines = Files.readAllLines(orderListFile.toPath());
 			int orderLineIndex = 1;
-			Optional<OrderData> orderData = Optional.empty();
-			
+			Optional<OrderData> orderData;
+
 			for (String orderLine : orderLines) {
 				if (StringUtils.isNotEmpty(orderLine)) {
 					orderData = extractOrderData(orderLine, orderLineIndex);
@@ -53,81 +64,83 @@ public class OrderReader {
 				}
 				orderLineIndex++;
 			}
-			
+
 		} catch (IOException e) {
 			throw new DroneSchedulerException("Unable to read from " + orderListFile.getName(), e);
 		}
-		
+
 		return orderDataList;
 	}
 
-	private Optional<OrderData> extractOrderData(String orderLine, int orderLineIndex) {
-		
+	Optional<OrderData> extractOrderData(String orderLine, int orderLineIndex) {
+
 		try {
 			String[] orderComponents = orderLine.split("\\s");
-			
+
 			if (orderComponents.length != 3) {
-				// order format not valid
+				throw new DroneSchedulerException(String.format("Incorrect number of arguments: %s", orderLine));
 			}
-			
-			String orderId = orderComponents[ORDER_ID_INDEX];
-			String destinationCoordinates = orderComponents[DESTINATION_COORD_INDEX];
-			String orderTime = orderComponents[ORDER_TIME_INDEX];
-	
-			// validate order id
-			
+
+			String orderId = orderComponents[orderIdIndex];
+			String destinationCoordinates = orderComponents[destinationCoordIndex];
+			String orderTime = orderComponents[orderTimeIndex];
+
+			validateOrderId(orderId);
+
 			GridCoordinates coordinates = extractGridCoordinates(destinationCoordinates);
-			
+
 			// validate time
-			
 			OrderData orderData = new OrderData();
 			orderData.setOrderId(orderId);
 			orderData.setCoordinates(coordinates);
 			orderData.setOrderDate(extractOrderDate(orderTime));
-			 
+
 			return Optional.of(orderData);
-		}
-		catch (Exception e) {
-			logger.error(String.format("Unable to schedule delivery for order %s on line %s of input file", orderLine, orderLineIndex), e);
+		} catch (Exception e) {
+			logger.error(String.format("Unable to schedule delivery for order %s on line %s of input file", orderLine,
+					orderLineIndex), e);
 		}
 		return Optional.empty();
 	}
-	
-	
-	private LocalDateTime extractOrderDate(String orderTimeInput) {
-		LocalTime orderTime = LocalTime.parse(orderTimeInput); // TODO: handle bad date format
+
+	LocalDateTime extractOrderDate(String orderTimeInput) {
+		LocalTime orderTime = LocalTime.parse(orderTimeInput);
 		return LocalDateTime.now().with(orderTime);
 	}
-	
-	private GridCoordinates extractGridCoordinates(String coordinatesString) {
+
+	GridCoordinates extractGridCoordinates(String coordinatesString) {
 		Matcher coordinateMatcher = coordinatePattern.matcher(coordinatesString);
-		
+
 		// first item should be a direction
 		if (coordinateMatcher.matches()) {
-			
+
 			GridDirection latitude = GridDirection.getGridDirection(coordinateMatcher.group(1));
 			Double latitudeDistance = extractDistance(coordinateMatcher.group(2));
 			GridDirection longitude = GridDirection.getGridDirection(coordinateMatcher.group(3));
 			Double longitudeDistance = extractDistance(coordinateMatcher.group(4));
-			
+
 			return new GridCoordinates(latitude.calculateDistance(latitudeDistance),
 					longitude.calculateDistance(longitudeDistance));
 		}
-		
-		throw new DroneSchedulerException("Unable to extract direction or distance from input coordinates: " + coordinatesString);
-		
+
+		throw new DroneSchedulerException(
+				"Unable to extract direction or distance from input coordinates: " + coordinatesString);
+
 	}
-	
-	private Double extractDistance(String distance) {
-		
+
+	Double extractDistance(String distance) {
+
 		if (NumberUtils.isCreatable(distance)) {
 			return NumberUtils.createDouble(distance);
 		}
-		
+
 		throw new DroneSchedulerException("Unable to extract distance from input: " + distance);
 	}
 
-	
-	
-	
+	void validateOrderId(String orderId) {
+		if (!orderIdPattern.matcher(orderId).matches()) {
+			throw new DroneSchedulerException(String.format("%s is not a valid order ID format", orderId));
+		}
+	}
+
 }

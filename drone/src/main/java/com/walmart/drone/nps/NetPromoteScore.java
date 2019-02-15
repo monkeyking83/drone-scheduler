@@ -1,7 +1,7 @@
 package com.walmart.drone.nps;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 
@@ -10,7 +10,7 @@ public class NetPromoteScore {
 	private List<Integer> scores;
 
 	public NetPromoteScore() {
-		this.scores = new ArrayList<Integer>();
+		this.scores = new ArrayList<>();
 	}
 	
 	public void addScore(Integer score) {
@@ -41,7 +41,7 @@ public class NetPromoteScore {
 	}
 
 	private static Map<NetPromoterType, Integer> initCountByTypeMap() {
-		Map<NetPromoterType, Integer> countByType = new HashMap<>();
+		Map<NetPromoterType, Integer> countByType = new EnumMap<>(NetPromoterType.class);
 
 		for (NetPromoterType netPromoterType : NetPromoterType.values()) {
 			countByType.put(netPromoterType, Integer.valueOf(0));

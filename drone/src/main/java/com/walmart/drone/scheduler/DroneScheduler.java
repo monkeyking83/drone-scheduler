@@ -17,10 +17,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.walmart.drone.DeliveryRoute;
-import com.walmart.drone.OrderData;
-import com.walmart.drone.OrderDeliverySchedule;
-import com.walmart.drone.OrderReader;
+import com.walmart.drone.order.OrderData;
+import com.walmart.drone.order.OrderDeliverySchedule;
+import com.walmart.drone.order.OrderReader;
 
 @Component
 public class DroneScheduler {
